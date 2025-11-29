@@ -19,6 +19,10 @@ router.get('/chat', (req, res) => {
     res.render('index');
 });
 
+router.get('/ischat', (req, res) => {
+    res.render('ischat');
+});
+
 
 router.get('/docs', (req, res) => {
     res.render('api-docs');

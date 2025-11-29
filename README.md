@@ -174,6 +174,8 @@ We welcome contributions from the developer community. To contribute:
 
 Please review our [contribution guidelines](CONTRIBUTING.md) before submitting pull requests.
 
+See [CHANGELOG.md](CHANGELOG.md) for details on releases and changes.
+
 ## ![](https://cdn-icons-png.flaticon.com/32/1828/1828884.png) Support the Project
 
 If Clave App has benefited your workflow or inspired your projects, please consider showing your support:

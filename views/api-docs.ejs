@@ -99,7 +99,6 @@
                     </div>
                 </section>
 
-
                 <section id="image-api" class="mb-16">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="h-10 w-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
@@ -178,6 +177,139 @@
   "success": true,
   "model": "deepimg",
   "imageUrl": "https://..."
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="ishchat-api" class="mb-16">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                            <i data-lucide="sparkles" class="h-5 w-5 text-orange-500"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">3. IshChat API</h2>
+                    </div>
+
+                    <p class="text-muted-foreground mb-6">Advanced chat models including Grok and GPT-OSS.</p>
+
+                    <div class="bg-card border border-border rounded-xl p-6 mb-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span
+                                class="bg-green-500/10 text-green-500 px-2 py-1 rounded text-xs font-mono font-bold border border-green-500/20">POST</span>
+                            <code class="text-sm font-mono">/api/ischat</code>
+                        </div>
+
+                        <h3 class="text-lg font-semibold mb-3">Request Body</h3>
+                        <div class="overflow-x-auto mb-6">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Field</th>
+                                        <th>Type</th>
+                                        <th>Required</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-mono text-sm">message</td>
+                                        <td class="text-sm">string</td>
+                                        <td class="text-sm">Yes</td>
+                                        <td class="text-sm text-muted-foreground">The user's input message.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-mono text-sm">model</td>
+                                        <td class="text-sm">string</td>
+                                        <td class="text-sm">No</td>
+                                        <td class="text-sm text-muted-foreground">Model to use. Options: <code
+                                                class="bg-muted px-1 rounded">grok-3-mini</code> (default), <code
+                                                class="bg-muted px-1 rounded">grok-4-fast-reasoning</code>, <code
+                                                class="bg-muted px-1 rounded">gpt-oss-120b</code>.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-6">
+                            <div class="min-w-0">
+                                <h3 class="text-sm font-semibold mb-2 text-muted-foreground">Example Request</h3>
+                                <pre class="rounded-lg overflow-x-auto p-4 bg-[#282c34]"><code class="language-json">{
+  "message": "What is the meaning of life?",
+  "model": "grok-3-mini"
+}</code></pre>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="text-sm font-semibold mb-2 text-muted-foreground">Example Response</h3>
+                                <pre class="rounded-lg overflow-x-auto p-4 bg-[#282c34]"><code class="language-json">{
+  "text": "The meaning of life is...",
+  "model": "grok-3-mini"
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="anime-api" class="mb-16">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-10 w-10 rounded-lg bg-pink-500/10 flex items-center justify-center">
+                            <i data-lucide="palette" class="h-5 w-5 text-pink-500"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">4. Anime Generation API</h2>
+                    </div>
+
+                    <p class="text-muted-foreground mb-6">Generate high-quality anime and cyberpunk style images.</p>
+
+                    <div class="bg-card border border-border rounded-xl p-6 mb-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span
+                                class="bg-green-500/10 text-green-500 px-2 py-1 rounded text-xs font-mono font-bold border border-green-500/20">POST</span>
+                            <code class="text-sm font-mono">/api/anime</code>
+                        </div>
+
+                        <h3 class="text-lg font-semibold mb-3">Request Body</h3>
+                        <div class="overflow-x-auto mb-6">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Field</th>
+                                        <th>Type</th>
+                                        <th>Required</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-mono text-sm">prompt</td>
+                                        <td class="text-sm">string</td>
+                                        <td class="text-sm">Yes</td>
+                                        <td class="text-sm text-muted-foreground">Description of the image.</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-mono text-sm">style</td>
+                                        <td class="text-sm">string</td>
+                                        <td class="text-sm">No</td>
+                                        <td class="text-sm text-muted-foreground">Style to apply. Options: <code
+                                                class="bg-muted px-1 rounded">anime</code> (default), <code
+                                                class="bg-muted px-1 rounded">cyberpunk</code>.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-6">
+                            <div class="min-w-0">
+                                <h3 class="text-sm font-semibold mb-2 text-muted-foreground">Example Request</h3>
+                                <pre class="rounded-lg overflow-x-auto p-4 bg-[#282c34]"><code class="language-json">{
+  "prompt": "A magical girl in a forest",
+  "style": "anime"
+}</code></pre>
+                            </div>
+                            <div class="min-w-0">
+                                <h3 class="text-sm font-semibold mb-2 text-muted-foreground">Example Response</h3>
+                                <pre class="rounded-lg overflow-x-auto p-4 bg-[#282c34]"><code class="language-json">{
+  "images": ["https://..."],
+  "model": "anime"
 }</code></pre>
                             </div>
                         </div>

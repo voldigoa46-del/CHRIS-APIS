@@ -61,7 +61,7 @@ function handleModelChange() {
     const imageOptions = document.getElementById('image-options');
     const selectedModel = modelSelect ? modelSelect.value : 'default';
 
-    if (selectedModel === 'deepimg' && imageOptions) {
+    if ((selectedModel === 'deepimg' || selectedModel === 'anime') && imageOptions) {
         imageOptions.classList.remove('hidden');
     } else if (imageOptions) {
         imageOptions.classList.add('hidden');
@@ -71,7 +71,7 @@ function handleModelChange() {
 
     // Update placeholder text
     if (userInput) {
-        if (selectedModel === 'deepimg') {
+        if (selectedModel === 'deepimg' || selectedModel === 'anime') {
             userInput.placeholder = 'Describe the image you want to generate...';
         } else {
             userInput.placeholder = 'Send a message...';
@@ -154,7 +154,7 @@ async function sendMessage() {
         const selectedModel = modelSelect ? modelSelect.value : 'default';
 
 
-        const isImageModel = selectedModel === 'flux' || selectedModel === 'deepimg';
+        const isImageModel = selectedModel === 'flux' || selectedModel === 'deepimg' || selectedModel === 'anime';
 
         if (isImageModel) {
 
@@ -163,7 +163,8 @@ async function sendMessage() {
             const styleSelect = document.getElementById('style-select');
             const selectedStyle = styleSelect ? styleSelect.value : 'default';
 
-            const response = await fetch('/api/image', {
+            const endpoint = selectedModel === 'anime' ? '/api/anime' : '/api/image';
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -195,8 +196,10 @@ async function sendMessage() {
             }
 
         } else {
+            const ishChatModels = ['grok-3-mini', 'grok-4-fast-reasoning', 'grok-4-fast-non-reasoning', 'gpt-oss-120b'];
+            const endpoint = ishChatModels.includes(selectedModel) ? '/api/ischat' : '/api/chat';
 
-            const response = await fetch('/api/chat', {
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: text, model: selectedModel })

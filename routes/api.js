@@ -6,6 +6,8 @@ Import Controllers
 =============================== */
 const chatController = require('../controllers/chatController');
 const imageController = require('../controllers/imageController');
+const animeController = require('../controllers/animeController');
+const ishchatController = require('../controllers/ischatController');
 const utilityController = require('../controllers/utilityController');
 
 
@@ -24,5 +26,7 @@ router.post('/image', validateImageRequest, imageController.generateImage);
 
 
 router.get('/status', utilityController.getStatus);
+router.post('/ischat', ishchatController.handleChat);
+router.post('/anime', animeController.generate);
 
 module.exports = router;
