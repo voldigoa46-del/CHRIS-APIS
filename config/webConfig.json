@@ -1,7 +1,7 @@
 {
-    "siteName": "Clave",
+    "siteName": "Christus",
     "subtitle": "Open-source playground <br> <span class=\"bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent\">for messing with text & AI art.</span>",
-    "description": "Clave is my little open-source toolkit for building chatbots, generative art, and whatever else you can dream up. No configs, no headaches—just code and creativity. Your AI, your key, your canvas.",
+    "description": "Christus is my little open-source toolkit for building chatbots, generative art, and whatever else you can dream up. No configs, no headaches—just code and creativity. Your AI, your key, your canvas.",
     "baseUrl": "https://clave-app.onrender.com",
     "iconUrl": "https://res.cloudinary.com/dwcwp9ebv/image/upload/clave-nav_smlipb.png",
     "themeColor": "#3b82f6",
